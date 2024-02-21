@@ -1,6 +1,7 @@
 function TodoRowItem(props) {
     return (
-        <tr>
+        // Lớp con sử dụng được hàm deleteTodo từ lớp
+        <tr onClick={() => props.deleteTodo(props.rowNumber)}>
             <th scope={'row'}>{props.rowNumber}</th>
             <td>{props.rowDescription}</td>
             <td>{props.rowAssigned}</td>

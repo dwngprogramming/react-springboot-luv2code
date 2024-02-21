@@ -1,5 +1,4 @@
 import TodoRowItem from "./TodoRowItem";
-import todoRowItem from "./TodoRowItem";
 
 function TodoTable(props) {
     return(
@@ -14,9 +13,12 @@ function TodoTable(props) {
             <tbody>
             {props.todos.map(todo => (
                 <TodoRowItem
+                    key = {todo.rowNumber}
                     rowNumber={todo.rowNumber}
                     rowDescription={todo.rowDescription}
                     rowAssigned={todo.rowAssigned}
+                    // Truyền deleteTodo để lớp con có thể sử dụng
+                    deleteTodo={props.deleteTodo}
                 />
             ))}
             </tbody>
